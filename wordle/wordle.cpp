@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <stdexcept>
 
 using std::string;
 using std::vector;
@@ -151,9 +150,6 @@ int main()
     string userGuess;
     int guessCount = 0;
     int greenLetters;
-    string inspectedWord;
-    int inspectedIndex;
-    bool matchedWord;
     vector<string> matchingWordVector;
 
     cout << "Welcome to Walmart Wordle\n"
