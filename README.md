@@ -1,1 +1,1 @@
-# wordle-sim
+#Wordle Simulation on The Terminal
