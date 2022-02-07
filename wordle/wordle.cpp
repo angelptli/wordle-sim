@@ -1,7 +1,9 @@
 #include <iostream>
+#include <fstream>
 #include <vector>
 
 using std::string;
+using std::ifstream;
 using std::vector;
 using std::cout;
 using std::cin;
@@ -48,11 +50,13 @@ int getNumOfGreen(vector<int> indexTracker)
 
 vector<string> getWordFileArray()
 {
-    // Will open text file to occupy vector
-    vector<string> words = {"dream", "hobos", "those",
-                            "steam", "grass", "agile",
-                            "abbey", "bacon", "cache",
-                            "dance", "eater", "feeds"};
+    ifstream fin("words.txt");
+    vector<string> words;
+    string word;
+
+    while (fin >> word)
+        words.push_back(word);
+
     return words;
 }
 
@@ -223,7 +227,7 @@ int main()
         cout << "You lose!\n\n";
 
     // Show green, yellow, gray and user's guess
-    cout << "---------------------------"
+    cout << "---------------------------\n"
          << "FINAL GUESS:\n"
          << userGuess << " - " << convertGuessToColors(target, userGuess)
          << "\nTARGET WORD: " << target << '\n';
